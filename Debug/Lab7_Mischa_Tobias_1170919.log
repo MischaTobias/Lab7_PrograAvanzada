@@ -1,5 +1,4 @@
-﻿  MyForm.cpp
-C:\Users\misch\source\repos\Lab7_Mischa_Tobias_1170919\MyForm.h(96,39): warning C4129: 'L': secuencia de escape de carácter no reconocida
-C:\Users\misch\source\repos\Lab7_Mischa_Tobias_1170919\MyForm.h(130,24): warning C4244: '=': conversión de 'wchar_t' a 'char'; posible pérdida de datos
+﻿  Lista.cpp
+C:\Users\misch\source\repos\Lab7_Mischa_Tobias_1170919\Lista.cpp(35,7): warning C4101: 'nombre': variable local sin referencia
   Lista.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   Lab7_Mischa_Tobias_1170919.vcxproj -> C:\Users\misch\source\repos\Lab7_Mischa_Tobias_1170919\Debug\Lab7_Mischa_Tobias_1170919.exe

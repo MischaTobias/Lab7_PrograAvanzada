@@ -6,8 +6,8 @@ class Orden
 public:
 	Orden();
 public:
-	void BubbleSort(Lista lista);
-	void QuickSort(Lista lista);
-	void StupidSort(Lista lista);
+	Lista BubbleSort(Lista* lista, int n, bool genNumber);
+	Lista QuickSort(Lista* lista);
+	Lista StupidSort(Lista* lista);
 };
 
