@@ -34,15 +34,23 @@ void Lista::CambiarPos(int num1, int num2) {
 	Pokemon* newPokemon1 = new Pokemon();
 	char nombre[30];
 	newPokemon2 = first;
-	for (int i = 0; i < num2 - 2; i++)
+	for (int i = 0; i < num2 - 1; i++)
 	{
 		newPokemon2 = newPokemon2->siguientePokemon;
 	}
-	newPokemon1 = first;
-	for (int i = 0; i < num1 - 2; i++)
+	if (num1 == 0)
 	{
-		newPokemon1 = newPokemon1->siguientePokemon;
+		newPokemon1 = last;
 	}
+	else
+	{
+		newPokemon1 = first;
+		for (int i = 0; i < num1 - 1; i++)
+		{
+			newPokemon1 = newPokemon1->siguientePokemon;
+		}
+	}
+
 	int numGen = (newPokemon2->siguientePokemon)->genNumber;
 	int numNac = (newPokemon2->siguientePokemon)->nationalNumber;
 	int tamNom = (newPokemon2->siguientePokemon)->tamNombre;
@@ -58,7 +66,7 @@ void Lista::CambiarPos(int num1, int num2) {
 }
 
 int Lista::ObtenerNumGen(int num) {
-	if (num == 1){
+	if (num == 0){
 		return first->genNumber;
 	}
 	else {
@@ -73,7 +81,7 @@ int Lista::ObtenerNumGen(int num) {
 }
 
 int Lista::ObtenerNumNac(int num) {
-	if (num == 1) {
+	if (num == 0) {
 		return first->nationalNumber;
 	}
 	else {
@@ -88,7 +96,7 @@ int Lista::ObtenerNumNac(int num) {
 }
 
 int Lista::ObtenerTamNom(int num) {
-	if (num == 1) {
+	if (num == 0) {
 		return first->tamNombre;
 	}
 	else {
