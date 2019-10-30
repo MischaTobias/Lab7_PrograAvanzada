@@ -9,6 +9,7 @@ public:
 	int nElementos;
 public:
 	void Insertar(Pokemon* pokemon);
+	Pokemon* Quitar();
 	void CambiarPos(int num1, int num2);
 	int ObtenerNumGen(int num);
 	int ObtenerNumNac(int num);

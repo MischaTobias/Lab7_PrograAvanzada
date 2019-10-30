@@ -234,39 +234,48 @@ namespace Lab7MischaTobias1170919 {
 	}
 	private: System::Void btnOrdenar_Click(System::Object^ sender, System::EventArgs^ e) {
 		Orden* objOrden = new Orden();
+		array<Pokemon*>^ vectPokemon = gcnew array<Pokemon*>(listaPokemons->nElementos);
+		array<int>^ vectNumGen = gcnew array<int>(listaPokemons->nElementos);
+		array<int>^ vectNumNat = gcnew array<int>(listaPokemons->nElementos);
 
 		switch (cBMetodoOrdenamiento->SelectedIndex)
 		{
-		case 0:
-			if (cBCriteriosOrdenamiento->SelectedIndex == 0)
-			{
-				listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, false);
-			}
-			else
-			{
-				listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, true);
-			}
-			break;
-		case 1:
-			if (cBCriteriosOrdenamiento->SelectedIndex == 0)
-			{
-				listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, false);
-			}
-			else
-			{
-				listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, true);
-			}
-			break;
-		case 2:
-			if (cBCriteriosOrdenamiento->SelectedIndex == 0)
-			{
-				listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, false);
-			}
-			else
-			{
-				listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, true);
-			}
-			break;
+			case 0://Bubble
+				if (cBCriteriosOrdenamiento->SelectedIndex == 0)
+				{
+					listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, false);
+				}
+				else
+				{
+					listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, true);
+				}
+				break;
+			case 1://Quick
+				for (int i = 0; i < listaPokemons->nElementos; i++)
+				{
+					vectPokemon[i] = listaPokemons->Quitar();
+				}
+
+				if (cBCriteriosOrdenamiento->SelectedIndex == 0)
+				{
+					//listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, false);
+				}
+				else
+				{
+					//listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, true);
+				}
+				break;
+			case 2://Stupid
+
+				if (cBCriteriosOrdenamiento->SelectedIndex == 0)
+				{
+					//listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, false);
+				}
+				else
+				{
+					//listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, true);
+				}
+				break;
 		}
 		MostrarLista();
 	}

@@ -1,1 +1,1 @@
-1.4.Charmander,1.1.Bulbasaur,1.3.Venusaur,1.2.Ivysaur,1.8.Pikachu,1.10.Alakazam
+1.4.Charmander,2.1.Bulbasaur,1.3.Venusaur,5.2.Ivysaur,1.8.Pikachu,1.10.Alakazam

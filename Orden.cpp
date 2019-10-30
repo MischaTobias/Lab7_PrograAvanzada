@@ -14,16 +14,12 @@ Lista Orden::BubbleSort(Lista* lista, int n, bool genNumber) {
 				{
 					lista->CambiarPos(i, j);
 				}
-			}
-		}
-
-		for (int i = 0; i < n - 1; i++)
-		{
-			for (int j = i + 1; j < n; j++)
-			{
-				if (lista->ObtenerNumNac(i) > lista->ObtenerNumNac(j) && lista->ObtenerNumGen(i) == lista->ObtenerNumGen(j))
+				else if (lista->ObtenerNumGen(i) == lista->ObtenerNumGen(j))
 				{
-					lista->CambiarPos(i, j);
+					if (lista->ObtenerNumNac(i) > lista->ObtenerNumNac(j))
+					{
+						lista->CambiarPos(i, j);
+					}
 				}
 			}
 		}
@@ -45,10 +41,11 @@ Lista Orden::BubbleSort(Lista* lista, int n, bool genNumber) {
 	return *lista;
 }
 
-Lista Orden::QuickSort(Lista* lista) {
-	return *new Lista();
+Lista Orden::QuickSort(Lista lista, array<int>^ vectlista, int menor, int mayor, bool genNumber) {
+
+	return lista;
 }
 
-Lista Orden::StupidSort(Lista* lista) {
-	return *new Lista();
+Lista Orden::StupidSort(Lista lista, array<int>^ vectlista, int menor, int mayor, bool genNumber) {
+	return lista;
 }

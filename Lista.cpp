@@ -5,9 +5,21 @@ Lista::Lista() {
 	nElementos = 0;
 }
 
-//void Lista::Eliminar(Pokemon* pokemon) {
-//	Pokemon* pokemon = new Pokemon();
-//}
+Pokemon* Lista::Quitar() {
+	Pokemon* pokemon = new Pokemon();
+	if (first == nullptr)
+	{
+		return pokemon;
+	}
+	else
+	{
+		Pokemon* valor = first;
+		first = first->siguientePokemon;
+		nElementos--;
+		return valor;
+	}
+
+}
 
 void Lista::Insertar(Pokemon* pokemon) {
 	if (first == nullptr && last == nullptr)
