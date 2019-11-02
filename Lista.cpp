@@ -7,18 +7,28 @@ Lista::Lista() {
 
 Pokemon* Lista::Quitar() {
 	Pokemon* pokemon = new Pokemon();
-	if (first == nullptr)
+	if (first == nullptr || last == nullptr)
 	{
 		return pokemon;
 	}
 	else
 	{
 		Pokemon* valor = first;
+		(first->siguientePokemon)->anteriorPokemon = last;
 		first = first->siguientePokemon;
+		last->siguientePokemon = first;
 		nElementos--;
 		return valor;
 	}
+}
 
+Pokemon Lista::ObtenerdePos(int n) {
+	Pokemon* aux = new Pokemon();
+	for (int i = 0; i < n; i++)
+	{
+		aux = aux->siguientePokemon;
+	}
+	return *aux;
 }
 
 void Lista::Insertar(Pokemon* pokemon) {
@@ -26,17 +36,17 @@ void Lista::Insertar(Pokemon* pokemon) {
 	{
 		first = pokemon;
 		last = pokemon;
-		first->siguientePokemon = pokemon;
-		last->anteriorPokemon = pokemon;
+		first->anteriorPokemon = last;
+		last->siguientePokemon = first;
 		nElementos++;
 	}
 	else
 	{
 		pokemon->siguientePokemon = first;
 		pokemon->anteriorPokemon = last;
+		first->anteriorPokemon = pokemon;
 		first = pokemon;
 		last->siguientePokemon = first;
-		(first->siguientePokemon)->anteriorPokemon = first;
 		nElementos++;
 	}
 }
@@ -44,7 +54,7 @@ void Lista::Insertar(Pokemon* pokemon) {
 void Lista::CambiarPos(int num1, int num2) {
 	Pokemon* newPokemon2 = new Pokemon();
 	Pokemon* newPokemon1 = new Pokemon();
-	char nombre[30];
+	array<char>^ nombre = gcnew array<char>(30);
 	newPokemon2 = first;
 	for (int i = 0; i < num2 - 1; i++)
 	{

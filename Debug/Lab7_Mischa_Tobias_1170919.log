@@ -1,7 +1,6 @@
-﻿  MyForm.cpp
-C:\Users\misch\source\repos\Lab7_Mischa_Tobias_1170919\MyForm.h(174,39): warning C4129: 'L': secuencia de escape de carácter no reconocida
-  Orden.cpp
-  Generando código...
-C:\Users\misch\source\repos\Lab7_Mischa_Tobias_1170919\MyForm.h(231,24): warning C4244: '=': conversión de 'wchar_t' a 'char'; posible pérdida de datos
+﻿  Orden.cpp
+C:\Users\misch\source\repos\Lab7_Mischa_Tobias_1170919\Orden.cpp(60,6): warning C4101: 'temp': variable local sin referencia
   Lista.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+.NETFramework,Version=v4.5.2.AssemblyAttributes.obj : warning LNK4204: falta informaci¾n de depuraci¾n de 'C:\Users\misch\source\repos\Lab7_Mischa_Tobias_1170919\Debug\vc142.pdb' para hacer referencia al m¾dulo; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
+Pokemon.obj : warning LNK4204: falta informaci¾n de depuraci¾n de 'C:\Users\misch\source\repos\Lab7_Mischa_Tobias_1170919\Debug\vc142.pdb' para hacer referencia al m¾dulo; se vincularß el objeto sin tener en cuenta informaci¾n de depuraci¾n
   Lab7_Mischa_Tobias_1170919.vcxproj -> C:\Users\misch\source\repos\Lab7_Mischa_Tobias_1170919\Debug\Lab7_Mischa_Tobias_1170919.exe

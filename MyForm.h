@@ -234,35 +234,45 @@ namespace Lab7MischaTobias1170919 {
 	}
 	private: System::Void btnOrdenar_Click(System::Object^ sender, System::EventArgs^ e) {
 		Orden* objOrden = new Orden();
-		array<Pokemon*>^ vectPokemon = gcnew array<Pokemon*>(listaPokemons->nElementos);
-		array<int>^ vectNumGen = gcnew array<int>(listaPokemons->nElementos);
-		array<int>^ vectNumNat = gcnew array<int>(listaPokemons->nElementos);
+		Pokemon vectPokemon[6];
+		static int x = listaPokemons->nElementos;
+		for (int i = 0; i < x; i++)
+		{
+			vectPokemon[i] = *listaPokemons->Quitar();
+		}
 
 		switch (cBMetodoOrdenamiento->SelectedIndex)
 		{
 			case 0://Bubble
 				if (cBCriteriosOrdenamiento->SelectedIndex == 0)
 				{
-					listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, false);
+					for (int i = 0; i < 6; i++)
+					{
+						vectPokemon[i] = objOrden->BubbleSort(vectPokemon, 6, false)[i];
+					}
 				}
 				else
 				{
-					listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, true);
+					for (int i = 0; i < 6; i++)
+					{
+						vectPokemon[i] = objOrden->BubbleSort(vectPokemon, 6, true)[i];
+					}
 				}
 				break;
 			case 1://Quick
-				for (int i = 0; i < listaPokemons->nElementos; i++)
-				{
-					vectPokemon[i] = listaPokemons->Quitar();
-				}
-
 				if (cBCriteriosOrdenamiento->SelectedIndex == 0)
 				{
-					//listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, false);
+					for (int i = 0; i < 6; i++)
+					{
+						vectPokemon[i] = objOrden->QuickSort(vectPokemon, 0, 6 - 1, false)[i];
+					}
 				}
 				else
 				{
-					//listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, true);
+					for (int i = 0; i < 6; i++)
+					{
+						vectPokemon[i] = objOrden->QuickSort(vectPokemon, 0, 6 - 1, true)[i];
+					}
 				}
 				break;
 			case 2://Stupid
@@ -276,6 +286,11 @@ namespace Lab7MischaTobias1170919 {
 					//listaPokemons = &objOrden->BubbleSort(listaPokemons, listaPokemons->nElementos, true);
 				}
 				break;
+		}
+
+		for (int i = 5; i >= 0; i--)
+		{
+			listaPokemons->Insertar(&vectPokemon[i]);
 		}
 		MostrarLista();
 	}
